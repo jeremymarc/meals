@@ -29,9 +29,15 @@
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Log in</a></li>
-        <li><a href="#">Register</a></li>
-        <li><a href="#">Help</a></li>
+        <li>
+          <%= link_to 'Login', user_session_path %>
+        </li>
+        <li>
+          <%= link_to 'Register', new_user_registration_path %>
+        </li>
+        <li>
+          <a href="#">Help</a>
+        </li>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
