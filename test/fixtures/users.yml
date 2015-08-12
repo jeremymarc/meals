@@ -20,8 +20,16 @@
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  daily_calorie: 1
+jeremy:
+  email: jeremy@toptal.com
+  encrypted_password: <%= default_password_digest %>
+  daily_calorie: 4000
+  created_at: "2015-01-01 10:10"
+  updated_at: "2015-01-01 10:10"
 
-two:
-  daily_calorie: 1
+alexandre:
+  email: alexandre@toptal.com
+  encrypted_password: <%= default_password_digest %>
+  daily_calorie: 2000
+  created_at: "2015-01-01 10:10"
+  updated_at: "2015-01-01 10:10"
