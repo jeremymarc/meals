@@ -1,0 +1,32 @@
+class Api::UsersController < Api::BaseController
+  before_action :doorkeeper_authorize!, except: [:create]
+
+  def show
+    render json: current_user
+  end
+
+  def create
+    user = User.new(create_safe_params)
+    user.role = User.roles[:user]
+    user.save
+
+    render json: user
+  end
+
+  def update
+    user = User.find(current_user.id)
+    user.update_attributes(safe_params)
+
+    render json: user, status: 200
+  end
+
+  private
+
+  def safe_params
+    params.require(:user).permit(:daily_calorie)
+  end
+
+  def create_safe_params
+    params.require(:user).permit(:email, :password)
+  end
+end
