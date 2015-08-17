@@ -15,6 +15,9 @@ class Meal < ActiveRecord::Base
   belongs_to :user
 
   scope :from_user, ->(user) { where(user: user) }
-  scope :from_date, ->(datetime) { where("eaten_at < ?", datetime) }
-  scope :to_date, ->(datetime) { where("eaten_at > ?", datetime) }
+  scope :from_date, ->(datetime) { where("eaten_at > ?", datetime) }
+  scope :to_date, ->(datetime) { where("eaten_at < ?", datetime) }
+
+  validates :description, :eaten_at, :calories, presence: true
+  validates :calories, numericality: { only_integer: true }
 end
