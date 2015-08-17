@@ -116,6 +116,8 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     docile (1.1.5)
+    doorkeeper (2.2.1)
+      railties (>= 3.2)
     dotenv (2.0.2)
     dotenv-rails (2.0.2)
       dotenv (= 2.0.2)
@@ -214,6 +216,7 @@ GEM
     quiet_assets (1.1.0)
       railties (>= 3.1, < 5.0)
     rack (1.6.4)
+    rack-cors (0.4.0)
     rack-livereload (0.3.16)
       rack
     rack-protection (1.5.3)
@@ -361,6 +364,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   connection_pool
   devise
+  doorkeeper
   dotenv-rails (>= 2.0.0)
   font-awesome-rails
   guard (>= 2.2.2)
@@ -377,6 +381,7 @@ DEPENDENCIES
   pg (~> 0.18)
   poltergeist
   quiet_assets
+  rack-cors
   rack-livereload
   rails (= 4.2.1)
   rb-fsevent
