@@ -1,0 +1,39 @@
+# == Schema Information
+#
+# Table name: meals
+#
+#  calories    :integer
+#  created_at  :datetime         not null
+#  description :text
+#  eaten_at    :datetime
+#  id          :integer          not null, primary key
+#  updated_at  :datetime         not null
+#  user_id     :integer
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+burger:
+  calories: 2500
+  description: "Fast food meal"
+  eaten_at: 2015-08-09 00:12:52
+  user: jeremy
+
+vegetable:
+  calories: 1000
+  description: "Ate vegetable only at noon"
+  eaten_at: 2015-08-09 12:00:00
+  user: jeremy
+
+chicken:
+  calories: 1200
+  description: "Ate chiken and vegetale"
+  eaten_at: 2015-08-10 12:00:00
+  user: jeremy
+
+restaurant:
+  calories: 2200
+  description: "Ate at UCHI restaurant"
+  eaten_at: 2015-08-10 21:00:00
+  user: jeremy
+

@@ -19,17 +19,18 @@ require "capybara/rails"
 require "capybara/poltergeist"
 Capybara.javascript_driver = :poltergeist
 
-# Use Sidekiq's test fake that pushes all jobs into a jobs array
-require "sidekiq/testing"
-Sidekiq::Testing.fake!
-
+require "support/test_password_helper"
+require "support/doorkeeper_helper"
 class ActiveSupport::TestCase
+  include TestPasswordHelper
+  include DoorkeeperHelper
   # Setup all fixtures in test/fixtures/*.yml for all tests in alphabetical order.
   fixtures :all
 
   # Add more helper methods to be used by all tests here...
   setup { ActionMailer::Base.deliveries.clear }
 end
+ActiveRecord::FixtureSet.context_class.send :include, TestPasswordHelper
 
 class ActionDispatch::IntegrationTest
   # Make the Capybara DSL available in all integration tests

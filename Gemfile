@@ -19,6 +19,9 @@ gem "secure_headers", ">= 2.1.0"
 gem "sidekiq"
 gem "sinatra", ">= 1.3.0", :require => false
 gem "turbolinks", ">= 2.5.2"
+gem "devise"
+gem "doorkeeper"
+gem "rack-cors", :require => "rack/cors"
 
 group :production, :staging do
   gem "unicorn"
