@@ -20,7 +20,7 @@
 #
 
 # encoding: utf-8
-require 'digest/md5'
+require "digest/md5"
 
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
@@ -30,6 +30,7 @@ class User < ActiveRecord::Base
 
   has_many :meals, dependent: :destroy
   validates :email, presence: true
+
   enum role: [:user, :admin]
 
   def profile_image
