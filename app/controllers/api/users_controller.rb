@@ -8,9 +8,11 @@ class Api::UsersController < Api::BaseController
   def create
     user = User.new(create_safe_params)
     user.role = User.roles[:user]
-    user.save
-
-    render json: user
+    if user.save
+      render json: user, status: 201
+    else
+      render json: { errors: user.errors.full_messages }, status: 400
+    end
   end
 
   def update
