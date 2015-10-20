@@ -1,4 +1,4 @@
-# toptal
+# Meals
 
 This is a Rails 4.2.1 app.
 
